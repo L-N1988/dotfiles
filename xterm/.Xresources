@@ -1,0 +1,107 @@
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! configuration for xterm
+! Use a truetype font and size (xterm instead of urxvt).
+xterm: -e bash --rcfile /home/liuning/.bashrc
+xterm*faceName: Noto Mono
+xterm*faceSize: 20
+
+! Chinese fonts
+xterm*faceNameDoublesize:Microsoft Yahei:pixelsize=28:antialias=true
+XTerm*utf8:   1
+*background:  rgb:24/24/24
+*foreground:  rgb:f8/f8/f8
+*color0:      #33303b
+*color8:      #4f4b58
+*color1:      #ff5c57
+*color9:      #bdb76b
+*color2:      #5af78e
+*color10:     #5af78e
+*color3:      #f3f99d
+*color11:     #4a6372
+*color4:      #57c7ff
+*color12:     #57c7ff
+*color5:      #ff6ac1
+*color13:     #ff6ac1
+*color6:      #9aedfe
+*color14:     #9aedfe
+*color7:      #eff0eb
+*color15:     #eff0eb
+
+XTerm*pointerColor: white
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: white
+XTerm*cursorBlink: false
+XTerm*selectToClipboard: true
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+XTerm*translations: #override Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)  select-start() select-end()
+XTerm*SaveLines: 9000
+XTerm*rightScrollBar: false
+XTerm*ScrollBar: false
+XTerm*ScrollKey: true
+XTerm*fullscreen: never
+
+! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! configuration for urxvt
+! URxvt Appearance
+Xft.rgba:                       rgb
+Xft.hintstyle:                  hintfull
+URxvt*termName:                 rxvt-256color
+URxvt.font:                     xft:Noto Mono:style=Regular:size=23
+! URxvt.font:                     xft:family=LucidaTypewriter:style=Regular:size=25
+! URxvt*font:                     xft:mono:medium:size=20
+! URxvt.boldFont:                 xft:Noto Mono:style=Bold:size=20
+! URxvt.italicFont:               xft:Noto Mono:style=Italic:size=20
+! URxvt.boldItalicFont:           xft:Noto Mono:style=Bold Italic:size=20
+URxvt.depth:                    24
+URxvt*lineSpace:                0
+URxvt.letterSpace:              -2
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 92x48
+URxvt.scrollBar:                false
+URxvt.scrollBar_right:          false
+URxvt.cursorBlink:              false
+URxvt.cursorUnderline:          false
+URxvt.saveline:                 9000
+URxvt*loginShell:               true
+URxvt.internalBorder:           12
+
+! perl plugin configuration
+! URxvt.keysym.M-u:               perl:url-select:select_next
+! URxvt.url-select.launcher:      google-chrome
+! URxvt.perl-ext-common:          default,clipboard
+! URxvt.keysym.M-c:               perl:clipboard:copy
+! URxvt.keysym.M-v:               perl:clipboard:paste
+! URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
+! URxvt.clipboard.copycmd:        xclip -i -selection clipboard
+! URxvt.clipboard.pastecmd:       xclip -o -selection clipboard
+! 
+URxvt.perl-ext-common:          default,clipboard
+URxvt.clipboard.autocopy:       true
+URxvt.urgentOnBell:             true
+URxvt.matcher.button:           1
+URxvt.keysym.M-u:               perl:matcher:select
+URxvt.url-launcher:             google-chrome
+URxvt.url-select.underline:     true
+
+! Colors
+URxvt.foreground:   #f8f8f8
+URxvt.background:   #242424
+URxvt.cursorColor:  #f8f8f8
+URxvt.color0:      #33303b
+URxvt.color8:      #4f4b58
+URxvt.color1:      #ff5c57
+URxvt.color9:      #bdb76b
+URxvt.color2:      #5af78e
+URxvt.color10:     #5af78e
+URxvt.color3:      #f3f99d
+URxvt.color11:     #4a6372
+URxvt.color4:      #57c7ff
+URxvt.color12:     #57c7ff
+URxvt.color5:      #ff6ac1
+URxvt.color13:     #ff6ac1
+URxvt.color6:      #9aedfe
+URxvt.color14:     #9aedfe
+URxvt.color7:      #eff0eb
+URxvt.color15:     #eff0eb
