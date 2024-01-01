@@ -1,0 +1,10 @@
+#include "/home/liuning/Xresources-themes/iterm-Dracula.Xresources"
+xterm*faceName: Source Code Pro
+xterm*faceSize: 22
+
+! Chinese fonts
+xterm*faceNameDoublesize:Source Han Serif SC:pixelsize=34:antialias=true
+XTerm*utf8: 1
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
