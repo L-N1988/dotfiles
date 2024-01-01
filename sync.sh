@@ -13,7 +13,7 @@ ln -f ~/.config/alacritty/alacritty.yml .config/alacritty/alacritty.yml
 ln -f ~/.config/alacritty/catppuccin-mocha.yml .config/alacritty/catppuccin-mocha.yml
 ln -f ~/.config/bspwm/bspwmrc .config/bspwm/bspwmrc
 ln -f ~/.config/dunst/dunstrc .config/dunst/dunstrc
-ln -f ~/.config/picom/picom.conf .config/picom.conf
+ln -f ~/.config/picom/picom.conf .config/picom/picom.conf
 ln -f ~/.config/polybar/config.ini .config/polybar/config.ini
 ln -f ~/.config/rofi/config.rasi .config/rofi/config.rasi
 ln -f ~/.config/rofi/power.rasi .config/rofi/power.rasi
