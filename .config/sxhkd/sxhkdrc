@@ -15,7 +15,10 @@ super + k
 	~/.scripts/math.sh
 
 super + w
-	code ~/master/wolframPlay.wlnb
+	code ~/wolframPlay.wlnb
+
+super + e
+	~/.scripts/engulf.sh zathura fzf
 
 super + l
 	xterm
@@ -42,10 +45,6 @@ super + {shift + }e
 # floating terminal launcher
 super + alt + t
     xterm
-
-# screen shot
-super + ctrl + a
-    deepin-screenshot
 
 # program launcher
 # dmenu_run -fn 'Ubuntu Mono:bold:pixelsize=30' -nb '#fdf6e3' -nf '#586c75' -sf '#fdf6e3' -sb '#b58900'

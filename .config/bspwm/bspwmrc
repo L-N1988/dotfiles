@@ -8,12 +8,21 @@ export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
 export PATH=$PATH:$HOME/.config/emacs/bin
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-polybar &
 fcitx5 &
 
-feh --bg-fill ~/Pictures/MIT.webp
+# if [[ $(xrandr -q | grep -w 'DP1 connected') ]]; then
+# 	xrandr --output eDP1 --primary --mode 2160x1440 --rotate normal --output DP1 --mode 1920x1080 --rotate normal --right-of eDP1
+# 	bspc monitor DP1 -d 1 2 3 4
+# 	bspc monitor eDP1 -d V VI VII VIII IX X
+# else
+# 	bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
+# fi
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+$HOME/.scripts/switchMonitor.sh &
+# feh --bg-fill ~/Pictures/MIT.webp
+
+# bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# $HOME/.config/polybar/launch.sh &
 
 bspc config border_width        1
 bspc config window_gap          4
@@ -22,11 +31,11 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a firefox desktop='^3' state=tiled follow=on
+# bspc rule -a firefox desktop='^3' state=tiled follow=on
 bspc rule -a GeoGebra desktop='^9' state=tiled follow=on
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Inkscape desktop='^7' state=tiled follow=on
-bspc rule -a Emacs desktop='^2' state=tiled follow=on
+bspc rule -a Gimp desktop='^7' follow=on
+bspc rule -a Inkscape desktop='^7' follow=on
+# bspc rule -a Emacs desktop='^2' state=tiled follow=on
 bspc rule -a obsidian desktop='^5' state=tiled follow=on
 bspc rule -a URxvt desktop='^0' state=floating follow=on rectangle=1800x900+190+250
 bspc rule -a Zathura state=tiled follow=on 

@@ -98,7 +98,6 @@ export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
 export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
 # Add python package to the PATH
-##export PATH=$PATH:$HOME/.local/bin/
 export PATH=$PATH:$HOME/.config/emacs/bin
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -121,9 +120,9 @@ alias ob='objdump'
 alias pix='~/.scripts/pix2tex.sh'
 alias w='wolfram -run < '
 alias ma='nv ~/master/index.md'
-alias jo='.journey/bin/python'
-alias jopip='.journey/bin/pip'
-alias mkdocs='.journey/bin/mkdocs'
+alias jo='~/.journey/bin/python'
+alias jopip='~/.journey/bin/pip'
+alias mkdocs='~/.journey/bin/mkdocs'
 alias od='onedrive'
 alias paper='cd ~/OneDrive/master/文献/'
 
