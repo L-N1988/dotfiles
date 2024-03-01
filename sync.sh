@@ -20,6 +20,10 @@ ln -f ~/.config/rofi/power.rasi .config/rofi/power.rasi
 ln -f ~/.config/sakura/sakura.conf .config/sakura/sakura.conf
 ln -f ~/.config/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc
 ln -f ~/.config/zathura/zathurarc .config/zathura/zathurarc
+ln -f ~/.config/doom/config.el .config/doom/config.el
+ln -f ~/.config/doom/packages.el .config/doom/packages.el
+ln -f ~/.config/doom/init.el .config/doom/init.el
+ln -f ~/.config/doom/custom.el .config/doom/custom.el
 
 cp -r ~/.config/fcitx/* .config/fcitx/
 cp -r ~/.config/fcitx5/* .config/fcitx5/

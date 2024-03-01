@@ -112,27 +112,12 @@ alias v='vim'
 alias vi='vim'
 alias vf='vim $(fzf)'
 alias nv='nvim'
-alias hx='helix'
-alias matlab='ipython --profile=matlab'
 alias p='ipython --pylab'
 alias ju='julia'
 alias ob='objdump'
 alias pix='~/.scripts/pix2tex.sh'
-alias w='wolfram -run < '
-alias ma='nv ~/master/index.md'
 alias jo='~/.journey/bin/python'
 alias jopip='~/.journey/bin/pip'
 alias mkdocs='~/.journey/bin/mkdocs'
 alias od='onedrive'
-alias paper='cd ~/OneDrive/master/文献/'
-
-# miniconda activate
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if [ -f "/opt/miniconda3/etc/profile.d/mamba.sh" ]; then
-    . "/opt/miniconda3/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
 

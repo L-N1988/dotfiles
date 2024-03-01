@@ -4,7 +4,7 @@ Name=Default
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=pinyin
+DefaultIM=rime
 
 [Groups/0/Items/0]
 # Name
@@ -14,13 +14,13 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=keyboard-gr-polytonic
+Name=rime
 # Layout
 Layout=
 
 [Groups/0/Items/2]
 # Name
-Name=pinyin
+Name=keyboard-gr-polytonic
 # Layout
 Layout=
 

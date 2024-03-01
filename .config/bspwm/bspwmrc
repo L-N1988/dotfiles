@@ -35,7 +35,7 @@ bspc config gapless_monocle      true
 bspc rule -a GeoGebra desktop='^9' state=tiled follow=on
 bspc rule -a Gimp desktop='^7' follow=on
 bspc rule -a Inkscape desktop='^7' follow=on
-# bspc rule -a Emacs desktop='^2' state=tiled follow=on
+bspc rule -a Emacs desktop='^2' state=tiled follow=on
 bspc rule -a obsidian desktop='^5' state=tiled follow=on
 bspc rule -a URxvt desktop='^0' state=floating follow=on rectangle=1800x900+190+250
 bspc rule -a Zathura state=tiled follow=on 
