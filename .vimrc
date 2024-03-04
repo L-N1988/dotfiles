@@ -115,8 +115,16 @@ xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
 " recall last search. If the result window is closed, reopen it.
 noremap go :<C-U>Leaderf! rg --recall<CR>
 Plug 'morhetz/gruvbox'
-let g:gruvbox_italic=1
-autocmd vimenter * ++nested colorscheme gruvbox
+" let g:gruvbox_italic=1
+" autocmd vimenter * ++nested colorscheme gruvbox
+Plug 'ErichDonGubler/vim-sublime-monokai'
+let g:sublimemonokai_term_italic = 1
+autocmd vimenter * ++nested colorscheme sublimemonokai
+let java_comment_strings=1
+let java_highlight_functions=1
+let java_highlight_java_lang_ids=1
+Plug 'vim-python/python-syntax'
+let g:python_highlight_all = 1
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
 "使vimtex默认xelatex为编译器

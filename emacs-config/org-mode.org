@@ -1,0 +1,67 @@
+#+title: Org Mode
+
+* doom emacs init config
+#+begin_src elisp
+(org +dragndrop +hugo +jupyter +roam2 +pretty)              ; organize your plain life in plain text
+#+end_src
+see [[file:~/.config/emacs/modules/lang/org/README.org::*Module flags][Module flags]] for org-mode.
+
+* org-fragtog: latex live preview
+#+begin_src elisp
+(use-package! org-fragtog
+:after org
+:hook (org-mode . org-fragtog-mode) ; this auto-enables it when you enter an org-buffer, remove if you do not want this
+:config
+;; whatever you want
+;; zoom latex preview svg
+(plist-put org-format-latex-options :scale 2))
+#+end_src
+
+* org-download: easy paste clipboard figures :ATTACH:
+:PROPERTIES:
+:ID:       d53b5867-d916-4121-a898-8bca9028a34a
+:END:
+can not config *org-download-image-dir*, leads to *org-download-rename-at-point* does not work for org-attachment
+#+begin_src elisp
+(use-package! org-download
+  :after org
+  :init
+  ;; See post: https://rameezkhan.me/posts/2020/2020-07-03--adding-keybindings-to-doom-emacs/
+  (map! :leader
+        (:prefix-map ("i" . "insert")
+         :desc "Insert clipboard figure" "c" #'org-download-clipboard))
+  (setq org-download-image-dir "~/org/org-download-image-dir"))
+
+#+end_src
+
+[[attachment:_20240305_010332screenshot.png]]
+
+
+[[attachment:_20240305_011831screenshot.png]]
+
+* TODO org-roam: note taking workflow
++ org-roam-capture: [[id:b8105c22-ab16-47c4-a623-6a95c0259eb5][roam demo]]
++ org-roam-find-node
+
+* TODO org-juyter: run python code in org-mode
+#+BEGIN_SRC jupyter-python :session py
+x = 'foo '
+y = 'bar '
+x * 5 + y * 5
+#+END_SRC
+
+#+BEGIN_SRC python :session py
+import numpy as np
+sum = 0
+for i in range(100):
+    sum += i
+x = sum + np.pi * 100 + np.linspace(0, np.pi * 2, 10)
+y = np.sin(x)
+y
+#+END_SRC
+
+#+RESULTS:
+: array([-0.91277295, -0.43666692,  0.24376041,  0.81012954,  0.99743005,
+:         0.71802196,  0.10264341, -0.56076313, -0.96178237, -0.91277295])
+
+* TODO org-hugo: export org-mode to hugo posts

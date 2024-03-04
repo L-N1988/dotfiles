@@ -54,6 +54,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
+(require 'org)
+
 (setq org-directory "~/org/")
 (setq org-capture-templates
       '(("t" "Personal todo" entry
@@ -118,13 +120,12 @@
 ;; they are implemented.
 
 (use-package! org-fragtog
-:after org
-:hook (org-mode . org-fragtog-mode) ; this auto-enables it when you enter an org-buffer, remove if you do not want this
-:config
-;; whatever you want
-)
-
-(after! org (plist-put org-format-latex-options :scale 1))
+  :after org
+  :hook (org-mode . org-fragtog-mode) ; this auto-enables it when you enter an org-buffer, remove if you do not want this
+  :config
+  ;; whatever you want
+  ;; zoom latex preview svg
+  (plist-put org-format-latex-options :scale 2))
 
 (after! lsp-clangd
   (setq lsp-clients-clangd-args
@@ -135,3 +136,22 @@
           "--header-insertion=never"
           "--header-insertion-decorators=0"))
   (set-lsp-priority! 'clangd 2))
+
+(use-package! org-download
+  :after org
+  :init
+  ;; See post: https://rameezkhan.me/posts/2020/2020-07-03--adding-keybindings-to-doom-emacs/
+  (map! :leader
+        (:prefix-map ("i" . "insert")
+         :desc "Insert clipboard figure" "c" #'org-download-clipboard))
+  (setq org-download-image-dir "~/org/org-download-image-dir"))
+
+(use-package! jupyter
+  :after org
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (julia . t)
+     (python . t)
+     (jupyter . t))))
