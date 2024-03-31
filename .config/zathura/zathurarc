@@ -94,6 +94,9 @@
 # See man `man zathurarc'
 #-----------------------------
 
+# set if sqlite installed 
+set database sqlite
+
 # enable clipboard
 set selection-clipboard clipboard
 
