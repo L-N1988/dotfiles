@@ -49,6 +49,8 @@ bspc config bottom_padding 0
 
 xmodmap .Xmodmap
 xinput set-prop 11 "libinput Tapping Enabled" 1
+xsetwacom set 14 Button 2 "key +ctrl +shift p -shift -ctrl"
+xsetwacom set 15 Button 2 "key +ctrl +shift p -shift -ctrl"
 xrandr --dpi 130
 xrdb -merge .Xresources
 

@@ -139,6 +139,8 @@ Plug 'sirver/ultisnips'
 	" Inspired by https://www.skywind.me/blog/archives/2084
 	" 定义插件，默认用法，和 Vundle 的语法差不多
 Plug 'junegunn/vim-easy-align'
+	xmap ga <Plug>(EasyAlign)
+	nmap ga <Plug>(EasyAlign)
 " 延迟按需加载，使用到命令的时候再加载或者打开对应文件类型才加载
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'rdnetto/YCM-Generator'
@@ -201,7 +203,21 @@ Plug 'dense-analysis/ale'
 	let g:ale_cpp_gcc_options = '-Werror -O2 -std=c++14'
 	let g:ale_c_cppcheck_options = ''
 	let g:ale_cpp_cppcheck_options = ''
-	let g:ale_sign_error = "\ue009\ue009"
+	" let g:ale_sign_error = "\ue009\ue009"
+	let g:ale_sign_error = "✗"
+	let g:ale_sign_warning = ""
+	function s:apply_cc_options (buffer)
+		let [l:root, l:json_file] = ale#c#FindCompileCommands(a:buffer)
+
+		if l:json_file==''
+			let g:ale_c_cc_options = '-ansi -pedantic -Wall'
+		else
+			let g:ale_c_cc_options = ''
+		endif
+
+	endfunction
+
+	autocmd BufReadPost * call s:apply_cc_options(bufnr(''))
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/echodoc.vim'
 	set noshowmode

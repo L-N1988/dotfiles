@@ -88,11 +88,14 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
+# Compilation flags for ics2022
 # export ARCHFLAGS="-arch x86_64"
-export NEMU_HOME=/home/liuning/ics2022/nemu
-export AM_HOME=/home/liuning/ics2022/abstract-machine
-export ISA=riscv32
+# export NEMU_HOME=/home/liuning/ics2022/nemu
+# export AM_HOME=/home/liuning/ics2022/abstract-machine
+# export ISA=riscv32
+# Compilation flags for OS-2024-spring
+# export AM_HOME=/home/liuning/tmp/os-workbench/abstract-machine
+export AM_HOME=/home/liuning/os-workbench/abstract-machine
 # Add TeX Live to the PATH, MANPATH, INFOPATH
 # export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 # export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
