@@ -124,3 +124,4 @@ alias jopip='~/.journey/bin/pip'
 alias mkdocs='~/.journey/bin/mkdocs'
 alias od='onedrive'
 
+source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc

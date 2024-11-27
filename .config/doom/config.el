@@ -23,21 +23,14 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "JetBrains Mono NF" :size 28))
-(defun my-cjk-font() 
-	(dolist (charset '(kana han cjk-misc symbol bopomofo)) 
-		(set-fontset-font t charset (font-spec :family "LXGW WenKai Mono" :size 32)))) 
+(setq doom-font (font-spec :family "LXGW Bright Code" :size 32))
+;; (setq doom-font (font-spec :family "JetBrains Mono NF" :size 28))
+;; (defun my-cjk-font()
+;; 	(dolist (charset '(kana han cjk-misc symbol bopomofo))
+;; 		(set-fontset-font t charset (font-spec :family "LXGW WenKai Mono" :size 32))))
 
-(add-hook 'after-setting-font-hook #'my-cjk-font) 
-;; (defun init-cjk-fonts() 
-;; (dolist (charset '(kana han cjk-misc bopomofo)) 
-;; (set-fontset-font (frame-parameter nil 'font) 
-;; charset (font-spec :family "LXGW WenKai" :size 28)))) 
-;; (add-hook 'doom-init-ui-hook 'init-cjk-fonts)
-;;
-;; (setq doom-font (font-spec :family "Source Code Pro" :size 16 :weight 'semi-light
-;;       doom-variable-pitch-font (font-spec :family "Source Code Pro" :size 17)))
-;;
+;; (add-hook 'after-setting-font-hook #'my-cjk-font)
+
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -46,7 +39,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-tomorrow-day)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -63,10 +56,10 @@
          "* TODO %?\n%i%u\n%a" :prepend t)
         ("n" "Personal notes" entry
          (file +org-capture-notes-file)
-         "* %u %?\n%i\n%a")
+         "* %U %?\n%i\n%a")
         ("m" "Group meetings" entry
          (file "~/org/meeting.org")
-         "* %T %?\n%i\n")
+         "* %U %?\n%i\n")
         ("j" "Journal" entry
          (file+olp+datetree +org-capture-journal-file)
          "* %U %?\n%i\n%a" :prepend t)

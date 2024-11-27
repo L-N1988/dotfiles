@@ -50,3 +50,7 @@
 ;(unpin! t)
 
 (package! org-fragtog)
+(package! lean4-mode :recipe
+  (:host github
+   :repo "leanprover/lean4-mode"
+   :files ("*.el" "data")))
