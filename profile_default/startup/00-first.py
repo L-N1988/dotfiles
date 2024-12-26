@@ -9,7 +9,7 @@ from matplotlib.pyplot import rcParams
 # set default plot theme
 import seaborn as sns
 
-sns.set_style(style="darkgrid", rc={'font.family': 'Source Han Serif CN'})
+sns.set_style(style="darkgrid", rc={'font.family': ['Source Serif Pro', 'Source Han Serif CN']})
 sns.set_context("notebook", font_scale=1.25, rc = {
         "lines.linewidth": 1.5,
         "lines.markersize": 5,})

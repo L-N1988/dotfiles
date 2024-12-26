@@ -143,36 +143,6 @@ Plug 'junegunn/vim-easy-align'
 	nmap ga <Plug>(EasyAlign)
 " 延迟按需加载，使用到命令的时候再加载或者打开对应文件类型才加载
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'rdnetto/YCM-Generator'
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.sh' }
-	" make YCM compatible with UltiSnips (using supertab)
-	" See https://stackoverflow.com/a/22253548/15503074
-	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-	let g:SuperTabDefaultCompletionType = '<C-n>'
-
-	let g:ycm_add_preview_to_completeopt = 0
-	let g:ycm_show_diagnostics_ui = 0
-	let g:ycm_server_log_level = 'info'
-	let g:ycm_min_num_identifier_candidate_chars = 2
-	let g:ycm_collect_identifiers_from_comments_and_strings = 1
-	let g:ycm_complete_in_strings=1
-	" let g:ycm_key_invoke_completion = '<c-n>'
-	set completeopt=menu,menuone
-	" noremap <c-n> <NOP>
-	let g:ycm_semantic_triggers =  {
-							\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-							\ 'cs,lua,javascript': ['re!\w{2}'],
-							\ }
-	let g:ycm_filetype_whitelist = {
-				\ "c":1,
-				\ "cpp":1,
-				\ "objc":1,
-				\ "py":1,
-				\ "sh":1,
-				\ "zsh":1,
-				\ "java":1,
-				\ }
 " 自动异步生成 tags
 Plug 'ludovicchabant/vim-gutentags'
 	" gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
@@ -186,49 +156,23 @@ Plug 'ludovicchabant/vim-gutentags'
 	let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 	let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 	let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-Plug 'dense-analysis/ale'
-	let g:ale_linters = {
-				\ 'c': ['gcc', 'clang', 'cppcheck'],
-				\ 'cpp': ['gcc', 'clang', 'cppcheck'],
-				\ }
-	let g:ale_linters_explicit = 1
-	let g:ale_completion_delay = 500
-	let g:ale_echo_delay = 20
-	let g:ale_lint_delay = 500
-	let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-	let g:ale_lint_on_text_changed = 'normal'
-	let g:ale_lint_on_insert_leave = 1
-	let g:airline#extensions#ale#enabled = 1
-	let g:ale_c_gcc_options = '-Werror -O2 -std=c99'
-	let g:ale_cpp_gcc_options = '-Werror -O2 -std=c++14'
-	let g:ale_c_cppcheck_options = ''
-	let g:ale_cpp_cppcheck_options = ''
-	" let g:ale_sign_error = "\ue009\ue009"
-	let g:ale_sign_error = "✗"
-	let g:ale_sign_warning = ""
-	function s:apply_cc_options (buffer)
-		let [l:root, l:json_file] = ale#c#FindCompileCommands(a:buffer)
-
-		if l:json_file==''
-			let g:ale_c_cc_options = '-ansi -pedantic -Wall'
-		else
-			let g:ale_c_cc_options = ''
-		endif
-
-	endfunction
-
-	autocmd BufReadPost * call s:apply_cc_options(bufnr(''))
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Shougo/echodoc.vim'
-	set noshowmode
-	let g:echodoc_enable_at_startup = 1
-	if has('nvim') || has('patch-8.0.902')
-		Plug 'mhinz/vim-signify'
-	else
-		Plug 'mhinz/vim-signify', { 'tag': 'legacy' }
-	endif
-	" default updatetime 4000ms is not good for async update
-	set updatetime=100
+  " set noshowmode
+  " let g:echodoc_enable_at_startup = 1
+	" Or, you could use vim's popup window feature.
+	let g:echodoc#enable_at_startup = 1
+	let g:echodoc#type = 'popup'
+	" To use a custom highlight for the popup window,
+	" change Pmenu to your highlight group
+	highlight link EchoDocPopup Pmenu
+  if has('nvim') || has('patch-8.0.902')
+  	Plug 'mhinz/vim-signify'
+  else
+  	Plug 'mhinz/vim-signify', { 'tag': 'legacy' }
+  endif
+  " default updatetime 4000ms is not good for async update
+  set updatetime=100
 Plug 'vim-airline/vim-airline'
 	let g:airline_section_z = "%p%% : \ue0a1:%l/%L: Col:%c"
 Plug 'vim-airline/vim-airline-themes'
@@ -297,3 +241,16 @@ set termguicolors
 "Insert time stamp
 nmap <leader>d i<C-R>=strftime("%Y-%m-%d %a")<CR><Esc>
 imap <F3> <C-R>=strftime("%Y-%m-%d")<CR>
+
+"Stack jump by Ctrl+o 2024-12-26 Thu
+set jumpoptions+=stack
+
+" Auto closing brackets in vanilla vim
+" https://stackoverflow.com/a/34992101/18736354
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O

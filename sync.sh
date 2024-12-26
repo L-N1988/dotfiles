@@ -9,7 +9,7 @@ ln -f ~/.tmux.conf.local .tmux.conf.local
 ln -f ~/.Xresources .Xresources
 ln -f ~/.Xmodmap .Xmodmap
 
-ln -f ~/.config/alacritty/alacritty.yml .config/alacritty/alacritty.yml 
+ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
 ln -f ~/.config/alacritty/catppuccin-mocha.yml .config/alacritty/catppuccin-mocha.yml
 ln -f ~/.config/bspwm/bspwmrc .config/bspwm/bspwmrc
 ln -f ~/.config/dunst/dunstrc .config/dunst/dunstrc
