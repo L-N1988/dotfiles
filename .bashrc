@@ -25,4 +25,7 @@ export ISA=riscv32
 # export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
 # export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
 
-source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc
+alias of8="source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc"
+alias of1916="source ~/openfoam-v1912/etc/bashrc"
+source ~/.fzf/shell/key-bindings.bash
+source ~/.fzf/shell/completion.bash

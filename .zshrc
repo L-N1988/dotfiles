@@ -123,5 +123,10 @@ alias jo='~/.journey/bin/python'
 alias jopip='~/.journey/bin/pip'
 alias mkdocs='~/.journey/bin/mkdocs'
 alias od='onedrive'
+alias of8="source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc"
+alias of1916="source ~/openfoam-v1912/etc/bashrc"
+alias w2f="source ~/waves2Foam/bin/bashrc.org"
 
-source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc
+source ~/.fzf/shell/key-bindings.zsh
+source ~/.fzf/shell/completion.zsh
+

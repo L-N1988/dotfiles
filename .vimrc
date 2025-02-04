@@ -247,10 +247,13 @@ set jumpoptions+=stack
 
 " Auto closing brackets in vanilla vim
 " https://stackoverflow.com/a/34992101/18736354
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
+
+" nnoremap E :echo eval(expand('<cword>'))<CR>
+nnoremap E :execute 'echo $' . expand('<cword>')<CR>
