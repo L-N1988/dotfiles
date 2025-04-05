@@ -36,6 +36,7 @@ bspc rule -a obsidian desktop='^5' state=tiled follow=on
 bspc rule -a URxvt desktop='^0' state=floating follow=on rectangle=1800x900+190+250
 bspc rule -a Zathura state=tiled follow=on 
 bspc rule -a feh state=floating follow=on 
+bspc rule -a Thunar state=floating follow=on 
 bspc rule -a XTerm state=floating follow=on 
 
 bspc config focus_by_distance   true

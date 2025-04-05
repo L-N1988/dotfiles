@@ -54,11 +54,12 @@ set number                     " 显示行号
 set relativenumber
 set cursorline
 set ruler                      " 打开状态栏标尺
-set shiftwidth=2               " 设定 << 和 >> 命令移动时的宽度为 2
-set softtabstop=2              " 使得按退格键时可以一次删掉 2 个空格
-set tabstop=2                  " 设定 tab 长度为 2
+set shiftwidth=4               " 设定 << 和 >> 命令移动时的宽度为 4
+set softtabstop=4              " 使得按退格键时可以一次删掉 4 个空格
+set tabstop=4                  " 设定 tab 长度为 4
+set expandtab                  " tab缩进替换相同数量的空格
 set nobackup                   " 覆盖文件时不备份
-" set autochdir                  " 自动切换当前目录为当前文件所在的目录pwd current dir
+                               " set autochdir                  " 自动切换当前目录为当前文件所在的目录pwd current dir
 set backupcopy=yes             " 设置备份时的行为为覆盖
 set hlsearch                   " 搜索时高亮显示被找到的文本
 set noerrorbells               " 关闭错误信息响铃
@@ -257,3 +258,4 @@ set jumpoptions+=stack
 
 " nnoremap E :echo eval(expand('<cword>'))<CR>
 nnoremap E :execute 'echo $' . expand('<cword>')<CR>
+

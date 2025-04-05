@@ -2,6 +2,9 @@
 
 internal_monitor=eDP1
 external_monitor=DP1
+res_1080p='1920x1080'
+res_2k='2560x1440'
+res_4k='3840x2160'
 
 monitor_add() {
 	# Number of desktop(s) to be moved to the second monitor
@@ -40,7 +43,7 @@ monitor_remove() {
 if [[ $(xrandr -q | grep -w 'DP1 connected') ]]; then
 	pkill polybar
 	# monitor_add
-	xrandr --output eDP1 --primary --mode 2160x1440 --rotate normal --output DP1 --mode 1920x1080 --rotate normal --right-of eDP1
+	xrandr --output eDP1 --primary --mode 2160x1440 --rotate normal --output DP1 --mode $res_4k --rotate normal --right-of eDP1
 	bspc monitor eDP1 -d 1 2 3 4
 	bspc monitor DP1 -d 5 6 7 8 9 0
 else

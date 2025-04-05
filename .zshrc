@@ -116,6 +116,7 @@ alias vi='vim'
 alias vf='vim $(fzf)'
 alias nv='nvim'
 alias p='ipython --pylab'
+alias py='python'
 alias ju='julia'
 alias ob='objdump'
 alias pix='~/.scripts/pix2tex.sh'
@@ -129,4 +130,4 @@ alias w2f="source ~/waves2Foam/bin/bashrc.org"
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
-
+source /etc/profile

@@ -29,3 +29,4 @@ alias of8="source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc"
 alias of1916="source ~/openfoam-v1912/etc/bashrc"
 source ~/.fzf/shell/key-bindings.bash
 source ~/.fzf/shell/completion.bash
+source /etc/profile
