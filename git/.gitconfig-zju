@@ -1,0 +1,8 @@
+[user]
+	email = 22334147@zju.edu.cn
+	name = 刘宁
+
+[https]
+	proxy = ""
+[http]
+	proxy = ""

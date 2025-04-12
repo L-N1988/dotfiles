@@ -9,6 +9,8 @@ ln -f ~/.Xmodmap .Xmodmap
 ln -f ~/.emacs ./tsoding-emacs/.emacs
 ln -f ~/.emacs.custom.el ./tsoding-emacs/.emacs.custom.el
 ln -f ~/.tmux/.tmux.conf .tmux.conf
+ln -f ~/.gitconfig ./git/.gitconfig
+ln -f ~/.gitconfig-zju ./git/.gitconfig-zju
 
 ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
 ln -f ~/.config/alacritty/catppuccin-mocha.yml .config/alacritty/catppuccin-mocha.yml
