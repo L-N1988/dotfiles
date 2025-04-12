@@ -25,6 +25,8 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 (save-place-mode 1)
+(global-hl-line-mode 1)
+(setq scroll-margin 4)
 
 (rc/require-theme 'gruber-darker)
 ;; (rc/require-theme 'zenburn)
@@ -42,14 +44,50 @@
 (evil-leader/set-key
  "e" 'find-file
  "s" 'helm-do-grep-ag
- "f" 'helm-find-files)
+ "ff" 'projectile-find-file)
 
+(global-unset-key (kbd "C-s"))
 (with-eval-after-load 'evil
   (evil-define-key 'normal 'global
     (kbd "C-h") 'evil-window-left
     (kbd "C-j") 'evil-window-down
     (kbd "C-k") 'evil-window-up
-    (kbd "C-l") 'evil-window-right))
+    (kbd "C-l") 'evil-window-right
+    (kbd "C-u") 'evil-scroll-up))
+
+;; Ensure hideshow and Evil are loaded before defining the keybinding
+(with-eval-after-load 'evil
+  ;; Define a custom function to toggle hide/show based on state
+  (defun my-hs-toggle-block ()
+    "Toggle between hiding and showing a code block under the cursor."
+    (interactive)
+    (if (hs-already-hidden-p)
+        (hs-show-block)
+      (hs-hide-block)))
+
+;; Bind space key in normal mode to the custom function
+(define-key evil-normal-state-map (kbd "SPC") #'my-hs-toggle-block))
+
+;; Optional: Enable hideshow in programming modes
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+
+;; Evil mode for xref buffer
+(with-eval-after-load 'evil
+  (evil-define-key 'normal xref--xref-buffer-mode-map
+    (kbd "RET") 'xref-goto-xref))
+
+;;; Project management
+(require 'projectile)
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map evil-normal-state-map
+              ("C-p" . projectile-find-file)
+              ("C-s" . projectile-ripgrep)))
+
+(require 'rg)
+(rg-enable-default-bindings)
 
 ;;; ido
 (rc/require 'smex 'ido-completing-read+)

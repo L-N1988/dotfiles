@@ -3,11 +3,12 @@
 ln -f ~/.vimrc .vimrc
 ln -f ~/.bashrc .bashrc
 ln -f ~/.zshrc .zshrc
-cp ~/.tmux/.tmux.conf .tmux.conf
-cp -r ~/.scripts/ .
 ln -f ~/.tmux.conf.local .tmux.conf.local
 ln -f ~/.Xresources .Xresources
 ln -f ~/.Xmodmap .Xmodmap
+ln -f ~/.emacs ./tsoding-emacs/.emacs
+ln -f ~/.emacs.custom.el ./tsoding-emacs/.emacs.custom.el
+ln -f ~/.tmux/.tmux.conf .tmux.conf
 
 ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
 ln -f ~/.config/alacritty/catppuccin-mocha.yml .config/alacritty/catppuccin-mocha.yml
@@ -25,6 +26,11 @@ ln -f ~/.config/doom/packages.el .config/doom/packages.el
 ln -f ~/.config/doom/init.el .config/doom/init.el
 ln -f ~/.config/doom/custom.el .config/doom/custom.el
 
+# hard link not allowed for directory
+cp -r ~/.emacs.local/ ./tsoding-emacs/.emacs.local/
+cp -r ~/.emacs.rc/ ./tsoding-emacs/.emacs.rc/
+cp -r ~/.emacs.snippets/ ./tsoding-emacs/.emacs.snippets/
+cp -r ~/.scripts/ .
 cp -r ~/.config/fcitx/* .config/fcitx/
 cp -r ~/.config/fcitx5/* .config/fcitx5/
 cp -r ~/.ipython/profile_default/ .
