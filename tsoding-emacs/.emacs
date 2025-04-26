@@ -55,6 +55,8 @@
     (kbd "C-l") 'evil-window-right
     (kbd "C-u") 'evil-scroll-up))
 
+(evil-define-key 'normal org-mode-map (kbd "<tab>") #'org-cycle)
+
 ;; Ensure hideshow and Evil are loaded before defining the keybinding
 (with-eval-after-load 'evil
   ;; Define a custom function to toggle hide/show based on state
@@ -65,8 +67,8 @@
         (hs-show-block)
       (hs-hide-block)))
 
-;; Bind space key in normal mode to the custom function
-(define-key evil-normal-state-map (kbd "SPC") #'my-hs-toggle-block))
+  ;; Bind space key in normal mode to the custom function
+  (define-key evil-normal-state-map (kbd "SPC") #'my-hs-toggle-block))
 
 ;; Optional: Enable hideshow in programming modes
 (add-hook 'prog-mode-hook #'hs-minor-mode)

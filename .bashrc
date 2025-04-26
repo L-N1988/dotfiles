@@ -15,6 +15,7 @@ alias vf='vim $(fzf)'
 alias nv='nvim'
 alias p='ipython --pylab'
 alias ju='julia'
+alias nemo="thunar"
 
 PS1='[\u@\h \W]\$ '
 export NEMU_HOME=/home/liuning/ics2022/nemu

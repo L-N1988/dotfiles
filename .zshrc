@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="mortalscumbag"
+ZSH_THEME="deepin-terminal"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,6 +127,7 @@ alias od='onedrive'
 alias of8="source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc"
 alias of1916="source ~/openfoam-v1912/etc/bashrc"
 alias w2f="source ~/waves2Foam/bin/bashrc.org"
+alias nemo="thunar"
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh

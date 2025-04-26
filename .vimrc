@@ -118,6 +118,7 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'ErichDonGubler/vim-sublime-monokai'
 	let g:sublimemonokai_term_italic = 1
 	autocmd vimenter * ++nested colorscheme sublimemonokai
+    " autocmd VimEnter * highlight Normal guibg=#000000 ctermbg=0
 	let java_comment_strings=1
 	let java_highlight_functions=1
 	let java_highlight_java_lang_ids=1
