@@ -2,6 +2,45 @@
 (global-set-key (kbd "C-c C-x j") #'org-clock-jump-to-current-clock)
 (add-hook 'org-mode-hook #'(visual-line-mode))
 
+(defun insert-org-header ()
+  "Insert Org mode title and author tags."
+  (interactive)
+  (insert "#+title: \n#+author: L-N1988\n")
+  (previous-line 2)  ; Move cursor to title line
+  (end-of-line))     ; Move cursor to end of title line
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c l") 'org-store-link)
+  (define-key org-mode-map (kbd "C-c C-l") 'org-insert-link)
+  ;; Bind to a key, e.g., C-c h
+  (define-key org-mode-map (kbd "C-c h") 'insert-org-header)
+  ;; Set Org block background to match Monokai's dark theme
+  (set-face-attribute 'org-block nil 
+                      :background "#181818"
+                      :foreground "#F8F8F2")
+  ;; Resize Org headings
+  (dolist (face '((org-level-1 . 1.35)
+                  (org-level-2 . 1.3)
+                  (org-level-3 . 1.2)
+                  (org-level-4 . 1.1)
+                  (org-level-5 . 1.1)
+                  (org-level-6 . 1.1)
+                  (org-level-7 . 1.1)
+                  (org-level-8 . 1.1)))
+    (set-face-attribute (car face) nil :font "EB Garamond" :weight 'bold :height (cdr face)))
+  ;; Make the document title a bit bigger
+  (set-face-attribute 'org-document-title nil :font "LXGW Wen Kai" :weight 'bold :height 1.8)
+  )
+
+(setq org-startup-folded 'content)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-cycle '(4)))) ; Simulates TAB to fold all headings
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-global-cycle 1))) ; Collapses everything
+(setq org-hide-block-startup t)
+
 (setq org-agenda-files (list "~/Documents/Agenda/"))
 
 (setq org-export-backends '(md))
@@ -87,3 +126,6 @@
          "* TODO %(org-cliplink-capture) \n  SCHEDULED: %t\n" :empty-lines 1)))
 (define-key global-map "\C-cc" 'org-capture)
 
+;;; org-bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))

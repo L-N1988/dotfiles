@@ -8,6 +8,9 @@
  '(org-agenda-exporter-settings '((org-agenda-tag-filter-preset (list "+personal"))))
  '(org-cliplink-transport-implementation 'url-el)
  '(org-enforce-todo-dependencies nil)
+ '(org-format-latex-options
+   '(:foreground default :background default :scale 2.5 :html-foreground "Black" :html-background "Transparent" :html-scale 2.5 :matchers
+                 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(org-refile-use-outline-path 'file)
