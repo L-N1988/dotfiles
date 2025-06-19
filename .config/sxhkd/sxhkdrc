@@ -15,7 +15,7 @@ super + k
 	~/.scripts/math.sh
 
 super + w
-	code ~/wolframPlay.wlnb
+    google-chrome-stable  --proxy-server='127.0.0.1:7890'
 
 super + e
 	~/.scripts/engulf.sh zathura fzf

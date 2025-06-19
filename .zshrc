@@ -70,9 +70,30 @@ ZSH_THEME="mortalscumbag"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
+
+# Plugin configuration
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# custom fzf flags
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+# To make fzf-tab follow FZF_DEFAULT_OPTS.
+# NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # User configuration
 
@@ -115,6 +136,7 @@ alias v='vim'
 alias vi='vim'
 alias vf='vim $(fzf)'
 alias nv='nvim'
+alias nf='nvim $(fzf)'
 alias p='ipython --pylab'
 alias py='python'
 alias ju='julia'
@@ -124,10 +146,13 @@ alias jo='~/.journey/bin/python'
 alias jopip='~/.journey/bin/pip'
 alias mkdocs='~/.journey/bin/mkdocs'
 alias od='onedrive'
-alias of8="source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc"
-alias of1916="source ~/openfoam-v1912/etc/bashrc"
-alias w2f="source ~/waves2Foam/bin/bashrc.org"
 alias nemo="thunar"
+
+alias of1916="source ~/openfoam-v1912/etc/bashrc"
+alias of2112="source ~/openfoam-v2112/etc/bashrc"
+alias w2f="source ~/waves2Foam/bin/bashrc.org"
+
+alias cv="source ~/cv2-venv/bin/activate"
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh

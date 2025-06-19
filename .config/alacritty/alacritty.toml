@@ -48,6 +48,6 @@ x = 5
 y = 0
 
 [general]
-import = ["/home/liuning/.config/alacritty/deepin-terminal.toml"]
+import = ["/home/liuning/.config/alacritty/catppuccin-mocha.toml"]
 
 [terminal]

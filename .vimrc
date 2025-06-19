@@ -143,6 +143,11 @@ Plug 'sirver/ultisnips'
 Plug 'junegunn/vim-easy-align'
 	xmap ga <Plug>(EasyAlign)
 	nmap ga <Plug>(EasyAlign)
+    " SEE: https://github.com/junegunn/vim-easy-align/blob/master/EXAMPLES.md
+    if !exists('g:easy_align_delimiters')
+        let g:easy_align_delimiters = {}
+    endif
+    let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 " 延迟按需加载，使用到命令的时候再加载或者打开对应文件类型才加载
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " 自动异步生成 tags
@@ -181,6 +186,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kaarmu/typst.vim'
 	let g:typst_pdf_viewer = "zathura"
 	nnoremap <leader>tt :TypstWatch<cr>
+Plug 'lervag/vim-foam'
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
