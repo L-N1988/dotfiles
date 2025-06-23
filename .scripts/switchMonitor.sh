@@ -44,8 +44,8 @@ if [[ $(xrandr -q | grep -w 'DP1 connected') ]]; then
 	pkill polybar
 	# monitor_add
 	xrandr --output eDP1 --primary --mode 2160x1440 --rotate normal --output DP1 --mode $res_4k --rotate normal --right-of eDP1
-	bspc monitor eDP1 -d 1 2 3 4
-	bspc monitor DP1 -d 5 6 7 8 9 0
+	bspc monitor eDP1 -d 1 2
+	bspc monitor DP1 -d 3 4 5 6 7 8 9 0
 else
 	# monitor_remove
 	bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
