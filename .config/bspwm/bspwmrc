@@ -38,6 +38,7 @@ bspc rule -a Zathura state=tiled follow=on
 bspc rule -a feh state=floating follow=on 
 bspc rule -a Thunar state=floating follow=on 
 bspc rule -a XTerm state=floating follow=on 
+bspc rule -a Matplotlib state=floating
 
 bspc config focus_by_distance   true
 bspc config normal_border_color "#44475a"

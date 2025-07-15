@@ -51,7 +51,7 @@ set mouse=a                    " Enable mouse usage (all modes)
 setlocal noswapfile            " 不要生成swap文件
 set bufhidden=hide             " 当buffer被丢弃的时候隐藏它
 set number                     " 显示行号
-set relativenumber
+" set relativenumber
 set cursorline
 set ruler                      " 打开状态栏标尺
 set shiftwidth=4               " 设定 << 和 >> 命令移动时的宽度为 4
@@ -118,10 +118,15 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'ErichDonGubler/vim-sublime-monokai'
 	let g:sublimemonokai_term_italic = 1
 	autocmd vimenter * ++nested colorscheme sublimemonokai
-    " autocmd VimEnter * highlight Normal guibg=#000000 ctermbg=0
 	let java_comment_strings=1
 	let java_highlight_functions=1
 	let java_highlight_java_lang_ids=1
+Plug 'ghifarit53/tokyonight-vim'
+    let g:tokyonight_style = 'storm' " available: night, storm
+    let g:tokyonight_enable_italic = 1
+    let g:tokyonight_transparent_background=1
+    let g:airline_theme = "tokyonight"
+    " autocmd vimenter * ++nested colorscheme tokyonight
 Plug 'lervag/vimtex'
 	let g:tex_flavor='latex'
 	"使vimtex默认xelatex为编译器
