@@ -193,6 +193,7 @@ Plug 'kaarmu/typst.vim'
 	let g:typst_pdf_viewer = "zathura"
 	nnoremap <leader>tt :TypstWatch<cr>
 Plug 'lervag/vim-foam'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 call plug#end()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.

@@ -21,7 +21,7 @@ $HOME/.scripts/switchMonitor.sh &
 # $HOME/.config/polybar/launch.sh &
 
 bspc config border_width        1
-bspc config window_gap          4
+bspc config window_gap          2
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -53,6 +53,6 @@ xmodmap .Xmodmap
 xinput set-prop 11 "libinput Tapping Enabled" 1
 xsetwacom set 14 Button 2 "key +ctrl +shift p -shift -ctrl"
 xsetwacom set 15 Button 2 "key +ctrl +shift p -shift -ctrl"
-xrandr --dpi 100
+xrandr --dpi 120
 xrdb -merge .Xresources
 
