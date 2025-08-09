@@ -13,16 +13,19 @@ ln -f ~/.gitconfig ./git/.gitconfig
 ln -f ~/.gitconfig-zju ./git/.gitconfig-zju
 
 ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
-ln -f ~/.config/alacritty/catppuccin-mocha.yml .config/alacritty/catppuccin-mocha.yml
+cp -r ~/.config/alacritty/themes/ .config/alacritty
 ln -f ~/.config/bspwm/bspwmrc .config/bspwm/bspwmrc
 ln -f ~/.config/dunst/dunstrc .config/dunst/dunstrc
 ln -f ~/.config/picom/picom.conf .config/picom/picom.conf
 ln -f ~/.config/polybar/config.ini .config/polybar/config.ini
+ln -f ~/.config/polybar/launch.sh .config/polybar/launch.sh
+cp -r ~/.config/polybar/themes/ .config/polybar/
 ln -f ~/.config/rofi/config.rasi .config/rofi/config.rasi
 ln -f ~/.config/rofi/power.rasi .config/rofi/power.rasi
 ln -f ~/.config/sakura/sakura.conf .config/sakura/sakura.conf
 ln -f ~/.config/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc
 ln -f ~/.config/zathura/zathurarc .config/zathura/zathurarc
+cp -r ~/.config/zathura/themes/ .config/zathura/
 ln -f ~/.config/doom/config.el .config/doom/config.el
 ln -f ~/.config/doom/packages.el .config/doom/packages.el
 ln -f ~/.config/doom/init.el .config/doom/init.el

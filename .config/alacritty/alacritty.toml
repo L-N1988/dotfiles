@@ -3,22 +3,22 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 11
+size = 12
 
 [font.bold]
-family = "Iosevka NFM"
+family = "LXGW Bright Code"
 style = "Bold"
 
 [font.bold_italic]
-family = "Iosevka NFM"
+family = "LXGW Bright Code"
 style = "Bold Italic"
 
 [font.italic]
-family = "Iosevka NFM"
+family = "LXGW Bright Code"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka NFM"
+family = "LXGW Bright Code"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -48,6 +48,6 @@ x = 3
 y = 0
 
 [general]
-import = ["/home/liuning/.config/alacritty/themes/themes/tokyo_night.toml"]
+import = ["/home/liuning/.config/alacritty/themes/themes/catppuccin-mocha.toml"]
 
 [terminal]

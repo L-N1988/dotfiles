@@ -51,7 +51,7 @@ set mouse=a                    " Enable mouse usage (all modes)
 setlocal noswapfile            " 不要生成swap文件
 set bufhidden=hide             " 当buffer被丢弃的时候隐藏它
 set number                     " 显示行号
-" set relativenumber
+set relativenumber
 set cursorline
 set ruler                      " 打开状态栏标尺
 set shiftwidth=4               " 设定 << 和 >> 命令移动时的宽度为 4
@@ -122,10 +122,9 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 	let java_highlight_functions=1
 	let java_highlight_java_lang_ids=1
 Plug 'ghifarit53/tokyonight-vim'
-    let g:tokyonight_style = 'storm' " available: night, storm
-    let g:tokyonight_enable_italic = 1
-    let g:tokyonight_transparent_background=1
-    let g:airline_theme = "tokyonight"
+    " let g:tokyonight_style = 'storm' " available: night, storm
+    " let g:tokyonight_enable_italic = 1
+    " let g:tokyonight_transparent_background=1
     " autocmd vimenter * ++nested colorscheme tokyonight
 Plug 'lervag/vimtex'
 	let g:tex_flavor='latex'
@@ -135,6 +134,7 @@ Plug 'lervag/vimtex'
 	let g:vimtex_view_method='zathura'
 	" let g:vimtex_view_general_viewer='evince'
 	let g:vimtex_quickfix_mode=0
+    let g:vimtex_compile_automatic = 0
 	set conceallevel=1
 	let g:tex_conceal='abdmg'
 	inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
@@ -188,6 +188,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'vim-airline/vim-airline'
 	let g:airline_section_z = "%p%% : \ue0a1:%l/%L: Col:%c"
 Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='tokyonight'
 Plug 'kaarmu/typst.vim'
 	let g:typst_pdf_viewer = "zathura"
 	nnoremap <leader>tt :TypstWatch<cr>

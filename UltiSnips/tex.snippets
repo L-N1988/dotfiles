@@ -55,13 +55,37 @@ snippet template "Basic template" b
 \end{document}
 endsnippet
 
+snippet beam "Beam template with UCB theme" b
+\documentclass[10pt,xcolor={table,dvipsnames},t]{beamer}
+\usetheme{UCBerkeley}
+\usepackage{ctex}
+
+\title{$1}
+\subtitle{$2}
+\author{刘宁}
+\institute{浙江大学}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  $0
+\end{frame}
+
+\end{document}
+endsnippet
+
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
 	$0
 \\end{$1}
 endsnippet
 
-snippet fra "begin{} / end{}" bA
+snippet fram "begin{} / end{}" bA
 \\begin{frame}{$1}
 	$0
 \\end{frame}
@@ -71,6 +95,11 @@ context "math()"
 priority 100
 snippet ... "ldots" iA
 \ldots
+endsnippet
+
+context "math()"
+snippet := "define as" iA
+\triangleq
 endsnippet
 
 snippet table "Table environment" b
@@ -857,5 +886,36 @@ endsnippet
 context "math()"
 snippet tau "tau" iA
 \tau
+endsnippet
+
+context "math()"
+snippet bf "math bold face" iA
+\mathbf{$1} $0
+endsnippet
+
+context "math()"
+snippet bb "math balckboard face" iA
+\mathbb{$1} $0
+endsnippet
+
+context "math()"
+snippet cal "math euler face" iA
+\mathcal{$1} $0
+endsnippet
+
+context "math()"
+snippet prop "proportional to" iA
+\propto
+endsnippet
+
+snippet col "new column" iA
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+	$1
+    \end{column}
+    \begin{column}{0.5\textwidth}
+	$2
+    \end{column}
+\end{columns}$0
 endsnippet
 # vim:ft=snippets
