@@ -20,6 +20,7 @@ ln -f ~/.config/picom/picom.conf .config/picom/picom.conf
 ln -f ~/.config/polybar/config.ini .config/polybar/config.ini
 ln -f ~/.config/polybar/launch.sh .config/polybar/launch.sh
 cp -r ~/.config/polybar/themes/ .config/polybar/
+cp -r ~/.config/polybar/scripts/ .config/polybar/
 ln -f ~/.config/rofi/config.rasi .config/rofi/config.rasi
 ln -f ~/.config/rofi/power.rasi .config/rofi/power.rasi
 ln -f ~/.config/sakura/sakura.conf .config/sakura/sakura.conf

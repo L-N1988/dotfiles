@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
-
-# Terminate already running bar instances
-killall polybar
-
-# Wait until the processes have been shut down
+killall -q polybar
+# wait untill process is down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-# Launch polybar
-polybar main -c $(dirname $0)/config.ini &
-
-if [[ $(xrandr -q | grep 'DP1 connected') ]]; then
-	polybar external -c $(dirname $0)/config.ini &
-fi
+# Launch bars
+echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+polybar powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
+polybar timespace 2>&1 | tee -a /tmp/polybar2.log & disown
+# polybar playerctl 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar cava 2>&1 | tee -a /tmp/polybar2.log & disown
+# polybar dexcom 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
