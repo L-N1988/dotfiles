@@ -13,7 +13,6 @@ ln -f ~/.gitconfig ./git/.gitconfig
 ln -f ~/.gitconfig-zju ./git/.gitconfig-zju
 
 ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
-cp -r ~/.config/alacritty/themes/ .config/alacritty
 ln -f ~/.config/bspwm/bspwmrc .config/bspwm/bspwmrc
 ln -f ~/.config/dunst/dunstrc .config/dunst/dunstrc
 ln -f ~/.config/picom/picom.conf .config/picom/picom.conf
