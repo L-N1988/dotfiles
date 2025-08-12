@@ -11,3 +11,12 @@ polybar cava 2>&1 | tee -a /tmp/polybar2.log & disown
 # polybar dexcom 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
+
+if [[ $(xrandr -q | grep 'DP1 connected') ]]; then
+	polybar external -c $(dirname $0)/config.ini &
+    polybar external_powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
+    polybar external_timespace 2>&1 | tee -a /tmp/polybar2.log & disown
+    polybar external_cava 2>&1 | tee -a /tmp/polybar2.log & disown
+    polybar external_net 2>&1 | tee -a /tmp/polybar2.log & disown
+    polybar external_sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
+fi
