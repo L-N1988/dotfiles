@@ -104,6 +104,7 @@ set selection-clipboard clipboard
 map r reload
 map p print
 map i recolor
+map r rotate
 map R rotate
 map = zoom in
 unmap f
