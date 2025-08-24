@@ -13,7 +13,6 @@ polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
 polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
 
 if [[ $(xrandr -q | grep -w 'DP1 connected') ]]; then
-    echo "Hello world"
     polybar external_powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
     polybar external_timespace 2>&1 | tee -a /tmp/polybar2.log & disown
     polybar external_cava 2>&1 | tee -a /tmp/polybar2.log & disown
