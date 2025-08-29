@@ -154,9 +154,6 @@ set notification-warning-fg     "#dc322f" # red
 set notification-bg             "#586e75" # base01
 set notification-fg             "#b58900" # yellow
 
-set highlight-color "#F4BF75" #0A
-set highlight-active-color "#6A9FB5" #0D
-
 set completion-group-bg         "#002b36" # base03
 set completion-group-fg         "#839496" # base0
 set completion-bg               "#073642" # base02
@@ -176,8 +173,10 @@ set inputbar-fg                 "#eee8d5" # base2
 set statusbar-bg                "#073642" # base02
 set statusbar-fg                "#93a1a1" # base1
 
-set highlight-color             "#657b83" # base00  # hightlight match when search keyword(vim's /)
-set highlight-active-color      "#268bd2" # blue
+# set highlight-color             "#657b83" # base00  # hightlight match when search keyword(vim's /)
+# set highlight-active-color      "#268bd2" # blue
+set highlight-color rgba(101,123,131,0.4) # not use space in config value !!!
+set highlight-active-color rgba(38,139,210,0.3)
 
 # Reverse search for vimtex
 set synctex true
