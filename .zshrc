@@ -151,6 +151,8 @@ alias nemo="thunar"
 alias of1916="source ~/openfoam-v1912/etc/bashrc"
 alias of2112="source ~/openfoam-v2112/etc/bashrc"
 alias w2f="source ~/waves2Foam/bin/bashrc.org"
+export NEK=/home/liuning/nektar/build/dist/bin/
+export PATH=$PATH:$NEK
 
 alias cv="source ~/cv2-venv/bin/activate"
 alias ai="source ~/pai/bin/activate"

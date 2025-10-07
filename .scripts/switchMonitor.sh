@@ -52,5 +52,5 @@ else
 fi
 
 $HOME/.config/polybar/launch.sh &
-# feh --bg-fill ~/Pictures/MIT.webp
-feh --bg-center ~/Pictures/true_detective.webp
+feh --bg-fill ~/Pictures/MIT.webp
+# feh --bg-center ~/Pictures/true_detective.webp
