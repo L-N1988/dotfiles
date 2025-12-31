@@ -82,6 +82,8 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 set scrolloff=4
 set tags=./.tags;,.tags        " 当前目录查找tags文件，否则向上递归查找父目录
 
+command! W w
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k

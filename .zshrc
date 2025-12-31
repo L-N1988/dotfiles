@@ -156,6 +156,7 @@ export PATH=$PATH:$NEK
 
 alias cv="source ~/cv2-venv/bin/activate"
 alias ai="source ~/pai/bin/activate"
+alias rvc="source ~/RVC3-python/.venv/bin/activate"
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
