@@ -124,6 +124,9 @@ export AM_HOME=/home/liuning/os-workbench/abstract-machine
 # Add python package to the PATH
 export PATH=$PATH:$HOME/.config/emacs/bin
 
+# Set default terminal
+export TERMINAL="alacritty"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.

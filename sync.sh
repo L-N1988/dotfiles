@@ -41,6 +41,8 @@ cp -r ~/.config/fcitx/* .config/fcitx/
 cp -r ~/.config/fcitx5/* .config/fcitx5/
 cp -r ~/.ipython/profile_default/ .
 cp -r ~/.vim/UltiSnips/ .
+cp -r ~/.config/Code/User/hsnips/ VSCode/
 
 # curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 #    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
