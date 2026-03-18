@@ -4,18 +4,18 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch bars
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar timespace 2>&1 | tee -a /tmp/polybar2.log & disown
-# polybar playerctl 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar cava 2>&1 | tee -a /tmp/polybar2.log & disown
-# polybar dexcom 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
+# polybar powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
+# polybar timespace 2>&1 | tee -a /tmp/polybar2.log & disown
+# polybar cava 2>&1 | tee -a /tmp/polybar2.log & disown
+# polybar net 2>&1 | tee -a /tmp/polybar2.log & disown
+# polybar sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
+polybar main 2>&1 | tee -a /tmp/polybar1.log & disown
 
 if [[ $(xrandr -q | grep -w 'DP1 connected') ]]; then
-    polybar external_powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
-    polybar external_timespace 2>&1 | tee -a /tmp/polybar2.log & disown
-    polybar external_cava 2>&1 | tee -a /tmp/polybar2.log & disown
-    polybar external_net 2>&1 | tee -a /tmp/polybar2.log & disown
-    polybar external_sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
+    # polybar external_powermenu 2>&1 | tee -a /tmp/polybar1.log & disown
+    # polybar external_timespace 2>&1 | tee -a /tmp/polybar2.log & disown
+    # polybar external_cava 2>&1 | tee -a /tmp/polybar2.log & disown
+    # polybar external_net 2>&1 | tee -a /tmp/polybar2.log & disown
+    # polybar external_sysinfo 2>&1 | tee -a /tmp/polybar2.log & disown
+    polybar external_main 2>&1 | tee -a /tmp/polybar2.log & disown
 fi
