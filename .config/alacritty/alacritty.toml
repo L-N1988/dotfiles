@@ -31,7 +31,8 @@ history = 10000
 multiplier = 3
 
 [selection]
-save_to_clipboard = false
+save_to_clipboard = true
+semantic_escape_chars = ":@-./_~?&=%+#"
 
 [terminal.shell]
 program = "/usr/bin/zsh"
@@ -48,6 +49,6 @@ x = 3
 y = 0
 
 [general]
-import = ["/home/liuning/.config/alacritty/themes/themes/catppuccin-mocha.toml"]
+import = ["/home/liuning/.config/alacritty/kitty-theme.toml"]
 
 [terminal]

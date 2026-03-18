@@ -118,11 +118,14 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 	" recall last search. If the result window is closed, reopen it.
 	noremap go :<C-U>Leaderf! rg --recall<CR>
 Plug 'ErichDonGubler/vim-sublime-monokai'
-	let g:sublimemonokai_term_italic = 1
-	autocmd vimenter * ++nested colorscheme sublimemonokai
-	let java_comment_strings=1
-	let java_highlight_functions=1
-	let java_highlight_java_lang_ids=1
+	" let g:sublimemonokai_term_italic = 1
+	" autocmd vimenter * ++nested colorscheme sublimemonokai
+	" let java_comment_strings=1
+	" let java_highlight_functions=1
+	" let java_highlight_java_lang_ids=1
+Plug 'morhetz/gruvbox'
+    let g:gruvbox_contrast_dark = 'hard'
+    autocmd vimenter * ++nested colorscheme gruvbox
 Plug 'ghifarit53/tokyonight-vim'
     " let g:tokyonight_style = 'storm' " available: night, storm
     " let g:tokyonight_enable_italic = 1

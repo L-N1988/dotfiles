@@ -1,0 +1,40 @@
+# Alacritty Theme Configuration
+# Converted from Kitty on 2026-03-18
+
+[colors.primary]
+background = "#151515"
+foreground = "#c0b18b"
+
+[colors.normal]
+black   = "#2f2f2f"
+red     = "#d75f5f"
+green   = "#d4d232"
+yellow  = "#af865a"
+blue    = "#22c3a1"
+magenta = "#775759"
+cyan    = "#84edb9"
+white   = "#c0b18b"
+
+[colors.bright]
+black   = "#555555"
+red     = "#d75f5f"
+green   = "#8fee96"
+yellow  = "#cd950c"
+blue    = "#22c3a1"
+magenta = "#775759"
+cyan    = "#84edb9"
+white   = "#d8d8d8"
+
+[colors.selection]
+text = "#2f2f2f"
+background = "#d75f5f"
+
+[colors.cursor]
+text = "#151515"
+cursor = "#8fee96"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500      # milliseconds (Kitty used 0.5s)
+blink_timeout = 15        # seconds (Kitty stops after 15s of inactivity)
+

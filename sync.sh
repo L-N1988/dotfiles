@@ -12,7 +12,9 @@ ln -f ~/.tmux/.tmux.conf .tmux.conf
 ln -f ~/.gitconfig ./git/.gitconfig
 ln -f ~/.gitconfig-zju ./git/.gitconfig-zju
 
+cp -r ~/.config/kitty/ .config/
 ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
+ln -f ~/.config/alacritty/kitty-theme.toml .config/alacritty/kitty-theme.toml
 ln -f ~/.config/neofetch/config.conf .config/neofetch/config.conf
 ln -f ~/.config/bspwm/bspwmrc .config/bspwm/bspwmrc
 ln -f ~/.config/dunst/dunstrc .config/dunst/dunstrc
