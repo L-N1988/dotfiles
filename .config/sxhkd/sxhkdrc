@@ -4,7 +4,8 @@
 
 # terminal emulator
 super + Return
-	kitty
+# enable chinese input method in kitty (https://github.com/kovidgoyal/kitty/issues/469#issuecomment-797439786)
+	GLFW_IM_MODULE=ibus kitty
 
 # screen shot
 super + ctrl + a

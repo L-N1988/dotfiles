@@ -193,7 +193,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'vim-airline/vim-airline'
 	let g:airline_section_z = "%p%% : \ue0a1:%l/%L: Col:%c"
 Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='tokyonight'
+    let g:airline_theme='molokai'
 Plug 'kaarmu/typst.vim'
 	let g:typst_pdf_viewer = "zathura"
 	nnoremap <leader>tt :TypstWatch<cr>
@@ -223,30 +223,6 @@ endif
 ""spell check and correction
 " inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-"##### auto fcitx  ###########
-let g:input_toggle = 1
-function! Fcitx2en()
-   let s:input_status = system("fcitx-remote")
-   if s:input_status == 2
-      let g:input_toggle = 1
-      let l:a = system("fcitx-remote -c")
-   endif
-endfunction
-
-function! Fcitx2zh()
-   let s:input_status = system("fcitx-remote")
-   if s:input_status != 2 && g:input_toggle == 1
-      let l:a = system("fcitx-remote -o")
-      let g:input_toggle = 0
-   endif
-endfunction
-
-set ttimeoutlen=150
-"Exit insert mode
-autocmd InsertLeave * call Fcitx2en()
-"Enter insert mode
-autocmd InsertEnter * call Fcitx2zh()
-"##### auto fcitx end ######
 
 "Neovim share system clipboard
 set clipboard=unnamedplus
@@ -257,6 +233,17 @@ set numberwidth=5
 command! -nargs=* T split | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 set termguicolors
+
+" state = 1, inactive mode for en input; state = 2, active mode for zh input
+" -c		inactivate input method
+" -o		activate input method
+let g:fcitx5state = system("fcitx5-remote")[0]
+
+augroup FcitxSync
+    autocmd!
+    autocmd InsertLeave * let g:fcitx5state = system("fcitx5-remote")[0] | call system("fcitx5-remote -c")
+    autocmd InsertEnter * if g:fcitx5state == '2' | call system("fcitx5-remote -o") | endif
+augroup END
 
 "Insert time stamp
 nmap <leader>d i<C-R>=strftime("%Y-%m-%d %a")<CR><Esc>

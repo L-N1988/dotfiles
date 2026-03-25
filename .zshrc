@@ -123,9 +123,8 @@ export AM_HOME=/home/liuning/os-workbench/abstract-machine
 # export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
 # Add python package to the PATH
 export PATH=$PATH:$HOME/.config/emacs/bin
-
-# Set default terminal
-export TERMINAL="alacritty"
+# Path for claude code
+export PATH="$HOME/claude-model/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -150,6 +149,7 @@ alias jopip='~/.journey/bin/pip'
 alias mkdocs='~/.journey/bin/mkdocs'
 alias od='onedrive'
 alias nemo="thunar"
+alias xo="xdg-open"
 
 alias of1916="source ~/openfoam-v1912/etc/bashrc"
 alias of2112="source ~/openfoam-v2112/etc/bashrc"

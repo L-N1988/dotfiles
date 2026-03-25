@@ -29,10 +29,7 @@ ln -f ~/.config/sakura/sakura.conf .config/sakura/sakura.conf
 ln -f ~/.config/sxhkd/sxhkdrc .config/sxhkd/sxhkdrc
 ln -f ~/.config/zathura/zathurarc .config/zathura/zathurarc
 cp -r ~/.config/zathura/themes/ .config/zathura/
-ln -f ~/.config/doom/config.el .config/doom/config.el
-ln -f ~/.config/doom/packages.el .config/doom/packages.el
-ln -f ~/.config/doom/init.el .config/doom/init.el
-ln -f ~/.config/doom/custom.el .config/doom/custom.el
+ln -f ~/.config/nvim/init.vim .config/nvim/init.vim
 
 # hard link not allowed for directory
 cp -r ~/.emacs.local/ ./tsoding-emacs/.emacs.local/
