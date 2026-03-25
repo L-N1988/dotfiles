@@ -234,15 +234,52 @@ command! -nargs=* T split | terminal <args>
 command! -nargs=* VT vsplit | terminal <args>
 set termguicolors
 
-" state = 1, inactive mode for en input; state = 2, active mode for zh input
-" -c		inactivate input method
-" -o		activate input method
-let g:fcitx5state = system("fcitx5-remote")[0]
+" A simple implementation but risk of sync freazing UI and empty return when
+" fcitx5 does not run
+" " state = 1, inactive mode for en input; state = 2, active mode for zh input
+" " -c		inactivate input method
+" " -o		activate input method
+" let g:fcitx5state = system("fcitx5-remote")[0]
+" 
+" augroup FcitxSync
+"     autocmd!
+"     autocmd InsertLeave * let g:fcitx5state = system("fcitx5-remote")[0] | call system("fcitx5-remote -c")
+"     autocmd InsertEnter * if g:fcitx5state == '2' | call system("fcitx5-remote -o") | endif
+" augroup END
 
-augroup FcitxSync
+" Default to safe state
+let g:fcitx5state = '1'
+
+" The async handler function
+function! Fcitx5JobHandler(job_id, data, event) dict
+    if a:event == 'stdout'
+        " Safely check if output is valid and not empty
+        if len(a:data) > 0 && len(a:data[0]) > 0
+            let self.temp_state = a:data[0][0]
+        endif
+    elseif a:event == 'exit'
+        " a:data contains the exit code on the 'exit' event
+        if a:data == 0
+            let g:fcitx5state = self.temp_state
+            if g:fcitx5state == '2'
+                call jobstart(['fcitx5-remote', '-c'])
+            endif
+        else
+            " Command failed (fcitx5 dead), fallback to safe state
+            let g:fcitx5state = '1'
+        endif
+    endif
+endfunction
+
+augroup FcitxAsyncSafe
     autocmd!
-    autocmd InsertLeave * let g:fcitx5state = system("fcitx5-remote")[0] | call system("fcitx5-remote -c")
-    autocmd InsertEnter * if g:fcitx5state == '2' | call system("fcitx5-remote -o") | endif
+    autocmd InsertLeave * call jobstart(['fcitx5-remote'], {
+        \ 'on_stdout': function('Fcitx5JobHandler'),
+        \ 'on_exit': function('Fcitx5JobHandler'),
+        \ 'stdout_buffered': v:true,
+        \ 'temp_state': '1'
+        \ })
+    autocmd InsertEnter * if g:fcitx5state == '2' | call jobstart(['fcitx5-remote', '-o']) | endif
 augroup END
 
 "Insert time stamp
