@@ -1,0 +1,99 @@
+# Core System
+base
+base-devel
+linux
+linux-firmware
+networkmanager
+networkmanager-openvpn
+bluez
+bluez-utils
+pulseaudio
+pulseaudio-alsa
+pamixer
+
+# Window Manager & Compositor
+bspwm
+sxhkd
+picom
+polybar
+rofi
+dunst
+feh
+xrandr
+xorg-server
+xorg-xinit
+xorg-xrdb
+xorg-xsetroot
+xorg-xset
+
+# Terminal
+kitty
+alacritty
+tmux
+
+# Fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ttf-font-awesome
+ttf-jetbrains-mono
+
+# Editors
+neovim
+vim
+emacs
+doom-emacs
+
+# Development
+git
+github-cli
+python
+python-pip
+python-pynvim
+nodejs
+npm
+
+# Utils
+neofetch
+ripgrep
+fd
+bat
+exa
+fzf
+zoxide
+htop
+btop
+curl
+wget
+unzip
+zip
+p7zip
+
+# Input Method
+fcitx5
+fcitx5-im
+fcitx5-chinese-addons
+fcitx5-pinyin-zmoegugu
+
+# PDF & Documents
+zathura
+zathura-pdf-mupdf
+poppler
+
+# Other
+mpv
+mpd
+ncmpcpp
+playerctl
+cava
+obsidian
+geogebra
+gimp
+inkscape
+thunar
+
+# Python packages (install with pip)
+# pynvim
+# black
+# flake8
+# pytest

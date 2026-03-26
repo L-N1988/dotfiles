@@ -1,0 +1,48 @@
+# Backup directories
+.dotfiles_backup_*
+
+# Editor swap files
+*.swp
+*.swo
+*~
+.*.swp
+
+# Emacs
+auto-save-list
+tramp
+\.emacs\.d/elpa/
+\.emacs\.d/.local/
+\.emacs\.d/.cache/
+
+# Vim
+.vim/.netrwhist
+.vim/plugged/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
