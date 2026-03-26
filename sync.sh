@@ -15,6 +15,7 @@ ln -f ~/.emacs.custom.el ./tsoding-emacs/.emacs.custom.el
 ln -f ~/.tmux/.tmux.conf .tmux.conf
 ln -f ~/.gitconfig ./git/.gitconfig
 ln -f ~/.gitconfig-zju ./git/.gitconfig-zju
+ln -f ~/.npmrc .npmrc
 
 cp -r ~/.config/kitty/ .config/
 ln -f ~/.config/alacritty/alacritty.toml .config/alacritty/alacritty.toml 
