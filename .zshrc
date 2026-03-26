@@ -121,10 +121,6 @@ export AM_HOME=/home/liuning/os-workbench/abstract-machine
 # export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 # export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
 # export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
-# Add python package to the PATH
-export PATH=$PATH:$HOME/.config/emacs/bin
-# Path for claude code
-export PATH="$HOME/claude-model/bin:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -154,8 +150,6 @@ alias xo="xdg-open"
 alias of1916="source ~/openfoam-v1912/etc/bashrc"
 alias of2112="source ~/openfoam-v2112/etc/bashrc"
 alias w2f="source ~/waves2Foam/bin/bashrc.org"
-export NEK=/home/liuning/nektar/build/dist/bin/
-export PATH=$PATH:$NEK
 
 alias cv="source ~/cv2-venv/bin/activate"
 alias ai="source ~/pai/bin/activate"
@@ -164,3 +158,4 @@ alias rvc="source ~/RVC3-python/.venv/bin/activate"
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
 source /etc/profile
+

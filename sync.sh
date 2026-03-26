@@ -6,6 +6,10 @@ ln -f ~/.zshrc .zshrc
 ln -f ~/.tmux.conf.local .tmux.conf.local
 ln -f ~/.Xresources .Xresources
 ln -f ~/.Xmodmap .Xmodmap
+ln -f ~/.xinitrc .xinitrc
+ln -f ~/.xprofile .xprofile
+ln -f ~/.zprofile .zprofile
+ln -f ~/.bash_profile .bash_profile
 ln -f ~/.emacs ./tsoding-emacs/.emacs
 ln -f ~/.emacs.custom.el ./tsoding-emacs/.emacs.custom.el
 ln -f ~/.tmux/.tmux.conf .tmux.conf

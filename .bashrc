@@ -25,6 +25,13 @@ export ISA=riscv32
 # export PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH
 # export MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man:$MANPATH
 # export INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info:$INFOPATH
+# Add python package to the PATH
+export PATH=$PATH:$HOME/.config/emacs/bin
+# Path for claude code
+export PATH="$HOME/claude-model/bin:$PATH"
+# npm global packages path
+export PATH=$HOME/.npm-global/bin:$PATH
+
 
 alias of8="source /opt/OpenFOAM/OpenFOAM-8/etc/bashrc"
 alias of1916="source ~/openfoam-v1912/etc/bashrc"
