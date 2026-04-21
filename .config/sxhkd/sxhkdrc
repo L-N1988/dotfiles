@@ -11,6 +11,10 @@ super + Return
 super + ctrl + a
 	~/.scripts/showNclip.sh
 
+# screen shot
+super + ctrl + p
+	~/.scripts/recordScreen.sh
+
 # math formula input
 super + k
 	~/.scripts/math.sh
