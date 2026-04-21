@@ -79,6 +79,9 @@ set foldcolumn=0               " 设置折叠区域的宽度
 setlocal foldlevel=1           " 设置折叠层数为 1
                                " 用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>  
+" Set specific fold settings for Python files
+autocmd FileType python setlocal foldmethod=indent
+autocmd FileType python setlocal foldnestmax=2
 set scrolloff=4
 set tags=./.tags;,.tags        " 当前目录查找tags文件，否则向上递归查找父目录
 
@@ -160,36 +163,12 @@ Plug 'junegunn/vim-easy-align'
     let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 " 延迟按需加载，使用到命令的时候再加载或者打开对应文件类型才加载
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" 自动异步生成 tags
-Plug 'ludovicchabant/vim-gutentags'
-	" gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-	let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
-	" 所生成的数据文件的名称
-	let g:gutentags_ctags_tagfile = '.tags'
-	" 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-	let s:vim_tags = expand('~/.cache/tags')
-	let g:gutentags_cache_dir = s:vim_tags
-	" 配置 ctags 的参数
-	let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-	let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-	let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'Shougo/echodoc.vim'
-  " set noshowmode
-  " let g:echodoc_enable_at_startup = 1
-	" Or, you could use vim's popup window feature.
-	let g:echodoc#enable_at_startup = 1
-	let g:echodoc#type = 'popup'
-	" To use a custom highlight for the popup window,
-	" change Pmenu to your highlight group
-	highlight link EchoDocPopup Pmenu
-  if has('nvim') || has('patch-8.0.902')
-  	Plug 'mhinz/vim-signify'
-  else
-  	Plug 'mhinz/vim-signify', { 'tag': 'legacy' }
-  endif
-  " default updatetime 4000ms is not good for async update
-  set updatetime=100
+if has('nvim') || has('patch-8.0.902')
+    Plug 'mhinz/vim-signify'
+else
+    Plug 'mhinz/vim-signify', { 'tag': 'legacy' }
+endif
 Plug 'vim-airline/vim-airline'
 	let g:airline_section_z = "%p%% : \ue0a1:%l/%L: Col:%c"
 Plug 'vim-airline/vim-airline-themes'

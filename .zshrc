@@ -147,8 +147,7 @@ alias od='onedrive'
 alias nemo="thunar"
 alias xo="xdg-open"
 
-alias of1916="source ~/openfoam-v1912/etc/bashrc"
-alias of2112="source ~/openfoam-v2112/etc/bashrc"
+alias of2512="source ~/openfoam-vXXXX/etc/bashrc"
 alias w2f="source ~/waves2Foam/bin/bashrc.org"
 
 alias cv="source ~/cv2-venv/bin/activate"
@@ -159,3 +158,5 @@ source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
 source /etc/profile
 
+# ENVIRON for develop claude-prism
+. "$HOME/.cargo/env"
