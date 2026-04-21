@@ -15,6 +15,9 @@ super + ctrl + a
 super + ctrl + p
 	~/.scripts/recordScreen.sh
 
+super + ctrl + q
+    pkill ffmpeg
+
 # math formula input
 super + k
 	~/.scripts/math.sh
